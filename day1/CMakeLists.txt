@@ -23,3 +23,10 @@ add_executable(split
 target_link_libraries(split Catch2::Catch2WithMain)
 add_test(NAME split COMMAND split)
 
+
+add_executable(graph
+  graph/graph.hpp
+  graph/graph.cpp
+  graph/graph-tests.cpp
+)
+
