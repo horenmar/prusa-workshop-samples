@@ -23,6 +23,14 @@ add_executable(split
 target_link_libraries(split Catch2::Catch2WithMain)
 add_test(NAME split COMMAND split)
 
+add_executable(divisors
+  divisors/divisors.hpp
+  divisors/divisors.cpp
+  divisors/divisors-tests.cpp
+)
+target_link_libraries(divisors Catch2::Catch2WithMain)
+add_test(NAME divisors COMMAND divisors)
+
 
 add_executable(graph
   graph/graph.hpp
