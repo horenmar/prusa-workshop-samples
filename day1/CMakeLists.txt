@@ -38,3 +38,15 @@ add_executable(graph
   graph/graph-tests.cpp
 )
 
+
+#--------------------------------------
+# This executable links together more tests to help showcasing tags
+add_executable(tags
+  join/join.hpp
+  join/join.cpp
+  join/join-tests.cpp
+  split/split.hpp
+  split/split.cpp
+  split/split-tests.cpp
+)
+target_link_libraries(tags Catch2::Catch2WithMain)
