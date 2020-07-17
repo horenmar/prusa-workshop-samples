@@ -15,3 +15,11 @@ target_link_libraries(join Catch2::Catch2WithMain)
 add_test(NAME join COMMAND join)
 
 
+add_executable(split
+  split/split.hpp
+  split/split.cpp
+  split/split-tests.cpp
+)
+target_link_libraries(split Catch2::Catch2WithMain)
+add_test(NAME split COMMAND split)
+
