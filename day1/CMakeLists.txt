@@ -63,6 +63,15 @@ target_link_libraries(mock Catch2::Catch2WithMain)
 add_test(NAME mock COMMAND mock)
 
 
+add_executable(trompeloeil
+  mock-framework/stopwatch.hpp
+  mock-framework/stopwatch-tests.cpp
+  mock-framework/trompeloeil.hpp
+  mock-framework/trompeloeil-catch-integration.hpp
+)
+target_link_libraries(trompeloeil Catch2::Catch2WithMain)
+add_test(NAME trompeloeil COMMAND trompeloeil)
+
 
 
 #--------------------------------------
