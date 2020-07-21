@@ -38,6 +38,14 @@ add_executable(graph
   graph/graph-tests.cpp
 )
 
+add_executable(month
+  data-driven/month.hpp
+  data-driven/month.cpp
+  data-driven/month-tests.cpp
+)
+target_link_libraries(month Catch2::Catch2WithMain)
+add_test(NAME month COMMAND month)
+
 
 #--------------------------------------
 # This executable links together more tests to help showcasing tags
