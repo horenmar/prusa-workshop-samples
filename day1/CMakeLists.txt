@@ -55,6 +55,16 @@ target_link_libraries(types Catch2::Catch2WithMain)
 add_test(NAME types COMMAND types)
 
 
+add_executable(mock
+  mock/algos.hpp
+  mock/algos-tests.cpp
+)
+target_link_libraries(mock Catch2::Catch2WithMain)
+add_test(NAME mock COMMAND mock)
+
+
+
+
 #--------------------------------------
 # This executable links together more tests to help showcasing tags
 add_executable(tags
