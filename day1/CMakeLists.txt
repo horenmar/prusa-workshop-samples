@@ -47,6 +47,14 @@ target_link_libraries(month Catch2::Catch2WithMain)
 add_test(NAME month COMMAND month)
 
 
+add_executable(types
+  type-driven/id-types.hpp
+  type-driven/id-types-tests.cpp
+)
+target_link_libraries(types Catch2::Catch2WithMain)
+add_test(NAME types COMMAND types)
+
+
 #--------------------------------------
 # This executable links together more tests to help showcasing tags
 add_executable(tags
