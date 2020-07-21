@@ -73,6 +73,12 @@ target_link_libraries(trompeloeil Catch2::Catch2WithMain)
 add_test(NAME trompeloeil COMMAND trompeloeil)
 
 
+add_executable(property
+  property/sort.hpp
+  property/sort-tests.cpp
+)
+target_link_libraries(property Catch2::Catch2WithMain)
+add_test(NAME property COMMAND property)
 
 #--------------------------------------
 # This executable links together more tests to help showcasing tags
