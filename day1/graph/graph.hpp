@@ -45,5 +45,21 @@ public:
     }
 };
 
-//! Writes out the provided graph in dot format to the given path
-void write_as_dot(simple_graph const& graph, std::string const& path);
+//! Writes out the provided graph in dot format to the given stream
+template <typename T>
+void write_as_dot(simple_graph const& graph, T& out) {
+    out.write("digraph G {\n");
+
+    for (size_t from : graph.nodes()) {
+        out.write(indent);
+
+        out << indent << from << ";\n";
+        for (size_t to : graph.edges_from(from)) {
+            out << indent << from << " -> " << to << ";\n";
+        }
+    }
+
+    out << "}\n" << std::flush;
+}
+
+

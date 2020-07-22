@@ -3,6 +3,6 @@
 /**
  * Returns n!
  *
- * \pre `n` >= 0
+ * Returns -1 if `n` is negative.
  */
 int factorial(int n);

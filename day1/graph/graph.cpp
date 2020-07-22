@@ -39,8 +39,7 @@ void simple_graph::add_node(size_t k) {
 
 static const char* indent = "    ";
 
-void write_as_dot(simple_graph const& graph, std::string const& path) {
-    std::ofstream out(path);
+void write_as_dot(simple_graph const& graph, std::ostream& out) {
     out << "digraph G {\n";
 
     for (size_t from : graph.nodes()) {

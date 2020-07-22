@@ -39,9 +39,9 @@ public:
         m_start = m_source->timestamp();
     }
 
-    size_t ms_since_start() const {
+    size_t us_since_start() const {
         const auto now = m_source->timestamp();
         assert(now >= m_start && "Current timestamp is older than start timestamp. Clock drift?");
-        return m_source->timestamp() - m_start;
+        return now - m_start;
     }
 };

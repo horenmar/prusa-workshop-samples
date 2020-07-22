@@ -23,5 +23,18 @@ TEST_CASE("Testing stopwatch with mock implementation of timestamp source", "[st
         REQUIRE_CALL(mc, timestamp())
             .RETURN(size_t(3));
         sw.restart();
+
+        REQUIRE_CALL(mc, timestamp())
+            .RETURN(size_t(5));
+        REQUIRE(sw.us_since_start() == 2);
     }
+
+    SECTION("Returns measured time") {
+        stopwatch sw(&mc);
+        REQUIRE_CALL(mc, timestamp()).RETURN(4);
+
+        REQUIRE(sw.us_since_start() == 2);
+    }
+
+
 }

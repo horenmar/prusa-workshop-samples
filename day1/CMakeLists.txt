@@ -37,6 +37,7 @@ add_executable(graph
   graph/graph.cpp
   graph/graph-tests.cpp
 )
+target_link_libraries(graph Catch2::Catch2WithMain)
 
 add_executable(month
   data-driven/month.hpp

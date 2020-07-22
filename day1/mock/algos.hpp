@@ -13,7 +13,7 @@ std::size_t find(Container const& cnt, T const& elem) {
     std::size_t idx = cnt.size();
     for (std::size_t i = 0; i < cnt.size(); ++i) {
         if (cnt[i] == elem && i < idx) {
-            idx = i;
+            return i;
         }
     }
     return idx;
